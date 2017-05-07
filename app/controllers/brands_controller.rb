@@ -10,6 +10,7 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.json
   def show
+    @sneakers = @brand.sneakers
   end
 
   # GET /brands/new
@@ -69,6 +70,6 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name)
+      params.require(:brand).permit(:name, :logo)
     end
 end
